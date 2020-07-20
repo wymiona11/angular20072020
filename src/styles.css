@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+.min-height{
+  min-height: 80vh;
+}
+.button-plus{
+  border-radius: 10%;
+  background-color: green;
+  color: white;
+  opacity: 0.8 !important;
+  font-size: 2rem;
+  align-self: center;
+  width: 3rem;
+  height: 3rem;
+  
+
+}
+.button-minus{
+  border-radius: 10%;
+  background-color: red;
+  color: white;
+  opacity: 0.8 !important;
+  font-size: 2rem;
+  align-self: center;
+  width: 3rem;
+  height: 3rem;
+}
