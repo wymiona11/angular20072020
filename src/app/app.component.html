@@ -2,7 +2,7 @@
   <div class="row min-height mx-auto align-items-center justify-content-center">
     <div class="col-7 mx-auto bg-danger py-3">
       <h1 class="text-capitalize text-white text-center">
-        lista zadan
+        {{config.title}}
       </h1>
     </div>
     <div class="col-7 mx-auto bg-primary py-3">
@@ -21,10 +21,15 @@
     </div>
     <div class="col-7 mx-auto bg-success py-3 px-2">
       <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-around align-items-center"><div class="w-75 m-0 p-0">Cras justo odio</div><div class="w-25"><button class="btn button-plus mx-2 p-0">+</button><button class="btn button-minus mx-2 p-0">-</button></div></li>
-        <li class="list-group-item d-flex justify-content-around align-items-center"><div class="w-75 m-0 p-0">Cras justo odio</div><div class="w-25"><button class="btn button-plus mx-2 p-0">+</button><button class="btn button-minus mx-2 p-0">-</button></div></li>
-       
+        <li class="list-group-item d-flex justify-content-around align-items-center"><div class="w-75 m-0 p-0">Cras justo odio</div><div class="w-25"><button class="btn button-plus mx-2 p-0">v</button><button class="btn button-minus mx-2 p-0">x</button></div></li>
+        <li class="list-group-item d-flex justify-content-around align-items-center"><div class="w-75 m-0 p-0">Cras justo odio</div><div class="w-25"><button class="btn button-plus mx-2 p-0">v</button><button class="btn button-minus mx-2 p-0">x</button></div></li>
       </ul>
+    </div>
+    <div class="col-7 mx-auto">
+      <button class="btn btn-outline-danger text-uppercase w-100">wyczysc</button>
+    </div>
+    <div class="col-7 mx-auto justify-content-center">
+      <footer>{{config.footer}}</footer>
     </div>
   </div>
 </div>
