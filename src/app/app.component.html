@@ -21,8 +21,19 @@
     </div>
     <div class="col-7 mx-auto bg-success py-3 px-2">
       <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-around align-items-center"><div class="w-75 m-0 p-0">Cras justo odio</div><div class="w-25"><button class="btn button-plus mx-2 p-0">v</button><button class="btn button-minus mx-2 p-0">x</button></div></li>
-        <li class="list-group-item d-flex justify-content-around align-items-center"><div class="w-75 m-0 p-0">Cras justo odio</div><div class="w-25"><button class="btn button-plus mx-2 p-0">v</button><button class="btn button-minus mx-2 p-0">x</button></div></li>
+        <li class="list-group-item d-flex justify-content-around align-items-center" *ngFor="let task of tasks">
+          <div class="w-75 m-0 p-0">{{task.name}} - {{task.deadline | date: 'd.MM EEEE':'':'pl'}}</div>
+          <div class="w-25">
+            <button class="btn button-plus mx-2 p-0">v</button>
+            <button class="btn button-minus mx-2 p-0">x</button>
+          </div>
+        </li>
+      </ul>
+      <ul>
+        <li *ngFor="let n of liczby; let even = even"><div  *ngIf = "even">{{n}}</div></li>
+      </ul>
+      <ul>
+        <li *ngFor="let item of dniTygodnia | keyvalue">{{item.key}} - {{item.value}}</li>
       </ul>
     </div>
     <div class="col-7 mx-auto">
