@@ -27,6 +27,9 @@ export class AppComponent {
     this.tasks.push(taskRoboczy);
     this.task = '';
   }
+  zrobione(item:Task){
+    item.done = true;
+  }
   constructor() {
     this.config = {
       title: 'lista zadan',

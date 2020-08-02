@@ -19,13 +19,26 @@
       </form>
     </div>
     <div class="col-7 mx-auto bg-success py-3 px-2">
-      <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-around align-items-center" *ngFor="let task of tasks; let index = index">
-          <div class="w-75 m-0 p-0">{{index + 1}}. {{task.name}} - {{task.deadline | date: 'd.MM EEEE':'':'pl'}}</div>
-          <div class="w-25">
-            <button class="btn button-plus mx-2 p-0">v</button>
-            <button class="btn button-minus mx-2 p-0">x</button>
-          </div>
+      <ul class="list-group" *ngFor="let item of tasks; let index = index">
+        <li class="list-group-item d-flex justify-content-around align-items-center" >
+          <ng-container *ngIf="!item.done; then trueT; else falseT"></ng-container>
+            <ng-template #trueT>
+              <div class="w-75 m-0 p-0">{{index + 1}}. {{item.name}} - {{item.deadline | date: 'd.MM EEEE':'':'pl'}}</div>
+              <div class="w-25">
+                <button class="btn button-plus mx-2 p-0" (click)="zrobione(item)">v</button>
+                <button class="btn button-minus mx-2 p-0">x</button>
+              </div>
+            </ng-template>
+            <ng-template #falseT>
+              <del>
+              <div class="w-75 m-0 p-0">{{index + 1}}. {{item.name}} - {{item.deadline | date: 'd.MM EEEE':'':'pl'}}</div>
+            </del>
+            </ng-template>
+
+
+
+
+
         </li>
       </ul>
     </div>
