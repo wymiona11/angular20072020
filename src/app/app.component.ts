@@ -27,8 +27,11 @@ export class AppComponent {
     this.tasks.push(taskRoboczy);
     this.task = '';
   }
-  zrobione(item:Task){
+  zrobione(item: Task) {
     item.done = true;
+  }
+  usun(item: Task) {
+    this.tasks = this.tasks.filter((e) => e != item);
   }
   constructor() {
     this.config = {
