@@ -8,15 +8,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   config: { [key: string]: string | Date } = null;
+  public task: string = 'prac matka, prac...';
+  public taskDate: Date;
   public tasks: Task[] = [
-    { name: 'pranie', deadline: '2020-02-12', done: false },
-    { name: 'prasowanie', deadline: '2020-02-15', done: false },
-    { name: 'odkuzanie', deadline: '2020-02-18', done: false },
+    { name: 'pranie', deadline: new Date('12.02.2020'), done: false },
+    { name: 'prasowanie', deadline: new Date('2020-02-15'), done: false },
+    { name: 'odkuzanie', deadline: new Date('2020-02-18'), done: false },
   ];
-clear(){
-  this.tasks = [];
-}
-
+  clear() {
+    this.tasks = [];
+  }
+  add() {
+    const taskRoboczy: Task = {
+      name: this.task,
+      deadline: new Date(this.taskDate),
+      done: false,
+    };
+    this.tasks.push(taskRoboczy);
+    this.task = '';
+  }
   constructor() {
     this.config = {
       title: 'lista zadan',

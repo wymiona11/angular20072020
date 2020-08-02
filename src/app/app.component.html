@@ -9,20 +9,19 @@
       <form class="row justify-content-around">
         <div class="form-group col-4">
           <label for="zad" class="text-uppercase text-white">Podaj zadanie</label>
-          <input type="text" class="form-control" id="zad">
+          <input type="text" class="form-control" id="zad" name="zad" [(ngModel)]="task" (keyup)="task">
         </div>
         <div class="form-group col-2">
           <label for="date" class="text-uppercase text-white">podaj date</label>
-          <input type="date" class="form-control" id="date">
+          <input type="date" class="form-control" id="date" name="date" [(ngModel)]="taskDate">
         </div>
-        <button type="submit" class="btn btn-success col-2 my-2 mx-2 text-uppercase text-dark font-weight-bold">dodaj</button>
-        <button type="button" class="btn btn-warning col-2 my-2 mx-2 text-uppercase text-dark font-weight-bold">zakoncz</button>
+        <button type="button" class="btn btn-success col-2 my-2 mx-2 text-uppercase text-dark font-weight-bold" [disabled]="task === ''" (click)="add()">dodaj</button>
       </form>
     </div>
     <div class="col-7 mx-auto bg-success py-3 px-2">
       <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-around align-items-center" *ngFor="let task of tasks">
-          <div class="w-75 m-0 p-0">{{task.name}} - {{task.deadline | date: 'd.MM EEEE':'':'pl'}}</div>
+        <li class="list-group-item d-flex justify-content-around align-items-center" *ngFor="let task of tasks; let index = index">
+          <div class="w-75 m-0 p-0">{{index + 1}}. {{task.name}} - {{task.deadline | date: 'd.MM EEEE':'':'pl'}}</div>
           <div class="w-25">
             <button class="btn button-plus mx-2 p-0">v</button>
             <button class="btn button-minus mx-2 p-0">x</button>
