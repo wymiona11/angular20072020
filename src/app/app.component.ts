@@ -13,16 +13,9 @@ export class AppComponent {
     { name: 'prasowanie', deadline: '2020-02-15', done: false },
     { name: 'odkuzanie', deadline: '2020-02-18', done: false },
   ];
-  public dniTygodnia = {
-    monday: 'poniedziałek',
-    thusday: 'wtorek',
-    wedensday: 'sroda',
-    thursday: 'czwartek',
-    friday: 'piatek',
-    saturday: 'sobota',
-    sunday: 'niedziela',
-  };
-  public liczby: string[] = ['jeden', 'dwa', 'trzy', 'cztery', 'piec'];
+clear(){
+  this.tasks = [];
+}
 
   constructor() {
     this.config = {

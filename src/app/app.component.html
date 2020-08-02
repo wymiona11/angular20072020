@@ -29,15 +29,9 @@
           </div>
         </li>
       </ul>
-      <ul>
-        <li *ngFor="let n of liczby; let even = even"><div  *ngIf = "even">{{n}}</div></li>
-      </ul>
-      <ul>
-        <li *ngFor="let item of dniTygodnia | keyvalue">{{item.key}} - {{item.value}}</li>
-      </ul>
     </div>
     <div class="col-7 mx-auto">
-      <button class="btn btn-outline-danger text-uppercase w-100">wyczysc</button>
+      <button class="btn btn-outline-danger text-uppercase w-100" (click)="clear()">wyczysc</button>
     </div>
     <div class="col-7 mx-auto justify-content-center">
       <footer>{{config.footer}}</footer>
