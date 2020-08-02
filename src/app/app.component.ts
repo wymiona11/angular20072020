@@ -26,9 +26,20 @@ export class AppComponent {
     };
     this.tasks.push(taskRoboczy);
     this.task = '';
+    this.sort();
   }
-  zrobione(item:Task){
+  zrobione(item: Task) {
     item.done = true;
+    this.sort();
+  }
+  usun(item: Task) {
+    this.tasks = this.tasks.filter((e) => e != item);
+    this.sort();
+  }
+  private sort(){
+    this.tasks.sort((a:Task, b:Task) =>
+      a.done === b.done ? 0 : a.done ? 1 : -1
+    );
   }
   constructor() {
     this.config = {
